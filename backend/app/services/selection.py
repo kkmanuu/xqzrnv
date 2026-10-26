@@ -1,9 +1,3 @@
-"""Forecast publication selection and forecast/actual matching.
-
-Key rule: for each delivery period, the forecast a trader could have used is the LATEST WINDFOR
-record with publishTime <= the day-ahead cutoff on D-1 (UK local time, DST-aware), where D is the
-UK local delivery date of the period.
-"""
 from __future__ import annotations
 
 from datetime import date, datetime, time, timedelta

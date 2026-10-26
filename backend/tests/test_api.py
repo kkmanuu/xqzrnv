@@ -15,7 +15,7 @@ def ts(s):
 
 @pytest.fixture
 def client(monkeypatch):
-    # Synthetic fixtures for tests ONLY; never shipped as deployed data.
+    # Synthetic fixtures 
     fc = pd.DataFrame({
         "start_time": [ts("2026-01-15T12:00")] * 3, "publish_time": [ts("2026-01-14T06:00"), ts("2026-01-14T09:20"), ts("2026-01-14T12:00")],
         "forecast_mw": [10.0, 20.0, 30.0]})

@@ -1,10 +1,9 @@
-"""Forecast accuracy metrics. All inputs/outputs in MW. error = forecast - actual."""
 from __future__ import annotations
 
 import numpy as np
 import pandas as pd
 
-# MAPE is undefined at zero and explodes near zero; only periods with actual >= this are used.
+# MAPE is undefined at zero and explodes near zero
 MAPE_MIN_ACTUAL_MW = 100.0
 
 

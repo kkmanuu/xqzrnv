@@ -1,12 +1,3 @@
-"""Thin Elexon Insights API client.
-
-Verified against the published OpenAPI collection (base https://data.elexon.co.uk/bmrs/api/v1):
-  - WINDFOR/stream : publishDateTimeFrom, publishDateTimeTo
-  - FUELHH/stream  : settlementDateFrom, settlementDateTo, fuelType
-No API key is required. Stream endpoints return a plain JSON array.
-NOT yet verified against live responses (sandbox could not reach Elexon): per-request
-window limits and exact field casing; the normaliser tolerates both.
-"""
 from __future__ import annotations
 
 import logging

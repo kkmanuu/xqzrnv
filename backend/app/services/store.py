@@ -1,7 +1,3 @@
-"""Data store: loads normalised Elexon data from an on-disk cache, fetching from Elexon only when absent.
-
-Historical January 2026 data is immutable enough to cache; this avoids hitting Elexon on every request.
-"""
 from __future__ import annotations
 
 import json
@@ -41,7 +37,7 @@ def build_cache(client: ElexonClient | None = None) -> Dataset:
     s = get_settings()
     client = client or ElexonClient()
     start, end = date.fromisoformat(s.window_start), date.fromisoformat(s.window_end)
-    # Forecasts for early-Jan delivery are published before 1 Jan, so look back a few days.
+    # Forecasts for early-Jan delivery are published before 1 Jan
     pub_from = datetime.combine(start - timedelta(days=3), datetime.min.time(), tzinfo=timezone.utc)
     pub_to = datetime.combine(end + timedelta(days=1), datetime.min.time(), tzinfo=timezone.utc)
     actuals = normalise_actuals(client.fetch_wind_actuals(start, end))

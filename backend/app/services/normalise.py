@@ -1,4 +1,3 @@
-"""Validation and normalisation of raw Elexon records into clean DataFrames (all times UTC)."""
 from __future__ import annotations
 
 import logging
