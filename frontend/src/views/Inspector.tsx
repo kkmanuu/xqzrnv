@@ -72,10 +72,9 @@ export default function Inspector({ date, cutoff }: { date: string; cutoff: stri
                 <YAxis unit=" MW" width={80} fontSize={12} />
                 <Tooltip labelFormatter={(t) => ukFull(String(t))} formatter={(v: number) => mw(v)} />
                 <Legend />
-                <Line dataKey="asof" name="Used for decision" stroke="var(--forecast)" dot={false} strokeWidth={2} isAnimationActive={false} />
-                <Line dataKey="latest" name="Latest available now" stroke="#7a5ea8" dot={false} strokeDasharray="5 4" isAnimationActive={false} />
-                {sel && <Line dataKey="picked" name="Selected publication" stroke="#444" dot={false} isAnimationActive={false} />}
-                <Line dataKey="actual" name="Actual" stroke="var(--actual)" dot={false} strokeWidth={2} isAnimationActive={false} />
+                <Line dataKey="asof" name="Used for decision" stroke="var(--forecast)" dot={false} strokeWidth={2} connectNulls isAnimationActive={false} />
+                <Line dataKey="latest" name="Latest available now" stroke="#7a5ea8" dot={false} strokeDasharray="5 4" connectNulls isAnimationActive={false} />
+                {sel && <Line dataKey="picked" name="Selected publication" stroke="#444" dot={false} connectNulls isAnimationActive={false} />}
               </LineChart>
             </ResponsiveContainer>
           </div>
