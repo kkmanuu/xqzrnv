@@ -11,7 +11,7 @@ export default function Overview({ a, meta }: { a: Analysis; meta: Meta }) {
   return (
     <>
       <div className="row g-3 mb-3">
-        <div className="col-6 col-xl-3"><Kpi label="MAE" value={mw(m.mae_mw)} tip="Mean absolute error: average size of the miss, ignoring direction." sub={`${m.n} half-hours`} /></div>
+        <div className="col-6 col-xl-3"><Kpi label="MAE" value={mw(m.mae_mw)} tip="Mean absolute error: average size of the miss, ignoring direction." sub={`${m.n} matched periods`} /></div>
         <div className="col-6 col-xl-3"><Kpi label="RMSE" value={mw(m.rmse_mw)} tip="Root mean squared error: like MAE but penalises large misses more." /></div>
         <div className="col-6 col-xl-3"><Kpi label="Bias" value={mw(m.bias_mw, 1)} tip="Mean of forecast minus actual. Positive = forecasts run high (wind over-promised)." sub={m.bias_mw! > 0 ? "forecast higher than actual" : "forecast lower than actual"} /></div>
         <div className="col-6 col-xl-3"><Kpi label="MAPE" value={pct(m.mape_pct)} tip={`Mean absolute percentage error, only for periods with actual ≥ ${m.mape_min_actual_mw} MW (near-zero actuals make it meaningless).`} sub={`${m.mape_n} of ${m.n} periods used`} /></div>
