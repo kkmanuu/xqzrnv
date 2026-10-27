@@ -10,7 +10,7 @@
 | Backend API | https://xqzrnv.onrender.com |
 | API documentation | https://xqzrnv.onrender.com/docs |
 | Repository | https://github.com/kkmanuu/xqzrnv |
-| Demo video | _add unlisted YouTube link_ |
+| Demo video | https://youtu.be/vlasWJR6Ksk|
 
 > The backend runs on a free Render instance that sleeps when idle. The first request can take 30-60 seconds; open `/api/health` first to wake it.
 
